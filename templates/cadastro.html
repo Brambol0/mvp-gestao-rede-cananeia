@@ -9,14 +9,30 @@
 <body>
     <main>
         <h1>Nova solicitação</h1>
+
         <form>
             <label for="titulo">Título</label>
-            <input id="titulo" name="titulo" required>
+            <input
+                type="text"
+                id="titulo"
+                name="titulo"
+                minlength="3"
+                maxlength="100"
+                required
+            >
 
             <label for="descricao">Descrição</label>
-            <textarea id="descricao" name="descricao" required></textarea>
+            <textarea
+                id="descricao"
+                name="descricao"
+                minlength="10"
+                maxlength="1000"
+                required
+            ></textarea>
 
-            <button type="submit">Salvar solicitação</button>
+            <button type="submit">
+                Salvar solicitação
+            </button>
         </form>
     </main>
 </body>
