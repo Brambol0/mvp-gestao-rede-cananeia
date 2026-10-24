@@ -14,5 +14,11 @@ def cadastro():
     return render_template("cadastro.html")
 
 
+
+@app.route("/solicitacoes")
+def solicitacoes():
+    return render_template("solicitacoes.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
