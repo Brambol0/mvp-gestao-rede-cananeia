@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consultar solicitações</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background: #ffffff;
+            color: #222222;
+        }
+
+        body.alto-contraste {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        body.alto-contraste a {
+            color: #ffff00;
+        }
+
+        body.alto-contraste button {
+            background: #ffff00;
+            color: #000000;
+            border: 2px solid #ffffff;
+        }
+
+        body.alto-contraste th,
+        body.alto-contraste td {
+            border-color: #ffffff;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #555555;
+            padding: 12px;
+            text-align: left;
+        }
+
+        button {
+            padding: 12px;
+            cursor: pointer;
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #ff9900;
+            outline-offset: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Consultar solicitações</h1>
+
+        <button
+            type="button"
+            id="botao-contraste"
+            aria-pressed="false"
+            onclick="alternarContraste()">
+            Ativar alto contraste
+        </button>
+
+        <p>Acompanhamento das demandas administrativas.</p>
+
+        <table>
+            <caption>Exemplo de solicitações</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Título</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Organização de documentos</td>
+                    <td>Pendente</td>
+                </tr>
+                <tr>
+                    <td>Atualização cadastral</td>
+                    <td>Em andamento</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>
+            <a href="/cadastro">Nova solicitação</a>
+        </p>
+    </main>
+
+    <script>
+        function alternarContraste() {
+            const ativo = document.body.classList.toggle(
+                "alto-contraste"
+            );
+
+            const botao = document.getElementById(
+                "botao-contraste"
+            );
+
+            botao.setAttribute("aria-pressed", String(ativo));
+
+            botao.textContent = ativo
+                ? "Desativar alto contraste"
+                : "Ativar alto contraste";
+        }
+    </script>
+</body>
+</html>
